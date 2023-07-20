@@ -1,19 +1,15 @@
 import React from 'react'
 
-function Article({blog}) {
-const post=blog.map((item)=>{
-     return (
-    <div>
-      <h3 key={item.id}>{item.title}</h3>
-      <p key={item.id}>{item.date}</p>
-      <p key={item.id}>{item.preview}</p>
-      <p key={item.id}>{item.minutes} minutes</p>
-    </div>
+const Article = ({ title, date = 'January 1, 1970', preview }) => {
+  return (
+    <>
+      <article>
+        <h3>{title}</h3>
+        <small>{date}</small>
+        <p>{preview}</p>
+      </article>
+    </>
   )
-})
- return(
-    <div>{post}</div>
- )
 }
 
 export default Article
